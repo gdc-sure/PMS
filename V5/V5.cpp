@@ -1,6 +1,3 @@
-// V5.cpp : ¶¨ÒåÓ¦ÓÃ³ÌĞòµÄÀàĞĞÎª¡£
-//
-
 #include "stdafx.h"
 #include "V5.h"
 #include "LoginDlg.h"
@@ -10,15 +7,9 @@
 #define new DEBUG_NEW
 #endif
 
-
-// CV5App
-
 BEGIN_MESSAGE_MAP(CV5App, CWinApp)
 	ON_COMMAND(ID_HELP, &CWinApp::OnHelp)
 END_MESSAGE_MAP()
-
-
-// CV5App ¹¹Ôì
 
 CV5App::CV5App()
 {
@@ -28,13 +19,13 @@ CV5App theApp;
 
 BOOL CV5App::InitInstance()
 {
-	// Èç¹ûÒ»¸öÔËĞĞÔÚ Windows XP ÉÏµÄÓ¦ÓÃ³ÌĞòÇåµ¥Ö¸¶¨Òª
-	// Ê¹ÓÃ ComCtl32.dll °æ±¾ 6 »ò¸ü¸ß°æ±¾À´ÆôÓÃ¿ÉÊÓ»¯·½Ê½£¬
-	//ÔòĞèÒª InitCommonControlsEx()¡£·ñÔò£¬½«ÎŞ·¨´´½¨´°¿Ú¡£
+	// å¦‚æœä¸€ä¸ªè¿è¡Œåœ¨ Windows XP ä¸Šçš„åº”ç”¨ç¨‹åºæ¸…å•æŒ‡å®šè¦
+	// ä½¿ç”¨ ComCtl32.dll ç‰ˆæœ¬ 6 æˆ–æ›´é«˜ç‰ˆæœ¬æ¥å¯ç”¨å¯è§†åŒ–æ–¹å¼ï¼Œ
+	//åˆ™éœ€è¦ InitCommonControlsEx()ã€‚å¦åˆ™ï¼Œå°†æ— æ³•åˆ›å»ºçª—å£ã€‚
 	INITCOMMONCONTROLSEX InitCtrls;
 	InitCtrls.dwSize = sizeof(InitCtrls);
-	// ½«ËüÉèÖÃÎª°üÀ¨ËùÓĞÒªÔÚÓ¦ÓÃ³ÌĞòÖĞÊ¹ÓÃµÄ
-	// ¹«¹²¿Ø¼şÀà¡£
+	// å°†å®ƒè®¾ç½®ä¸ºåŒ…æ‹¬æ‰€æœ‰è¦åœ¨åº”ç”¨ç¨‹åºä¸­ä½¿ç”¨çš„
+	// å…¬å…±æ§ä»¶ç±»ã€‚
 	InitCtrls.dwICC = ICC_WIN95_CLASSES;
 	InitCommonControlsEx(&InitCtrls);
 
@@ -42,14 +33,14 @@ BOOL CV5App::InitInstance()
 
 	AfxEnableControlContainer();
 
-	// ±ê×¼³õÊ¼»¯
-	// Èç¹ûÎ´Ê¹ÓÃÕâĞ©¹¦ÄÜ²¢Ï£Íû¼õĞ¡
-	// ×îÖÕ¿ÉÖ´ĞĞÎÄ¼şµÄ´óĞ¡£¬ÔòÓ¦ÒÆ³ıÏÂÁĞ
-	// ²»ĞèÒªµÄÌØ¶¨³õÊ¼»¯Àı³Ì
-	// ¸ü¸ÄÓÃÓÚ´æ´¢ÉèÖÃµÄ×¢²á±íÏî
-	// TODO: Ó¦ÊÊµ±ĞŞ¸Ä¸Ã×Ö·û´®£¬
-	// ÀıÈçĞŞ¸ÄÎª¹«Ë¾»ò×éÖ¯Ãû
-	//SetRegistryKey(_T("Ó¦ÓÃ³ÌĞòÏòµ¼Éú³ÉµÄ±¾µØÓ¦ÓÃ³ÌĞò"));
+	// æ ‡å‡†åˆå§‹åŒ–
+	// å¦‚æœæœªä½¿ç”¨è¿™äº›åŠŸèƒ½å¹¶å¸Œæœ›å‡å°
+	// æœ€ç»ˆå¯æ‰§è¡Œæ–‡ä»¶çš„å¤§å°ï¼Œåˆ™åº”ç§»é™¤ä¸‹åˆ—
+	// ä¸éœ€è¦çš„ç‰¹å®šåˆå§‹åŒ–ä¾‹ç¨‹
+	// æ›´æ”¹ç”¨äºå­˜å‚¨è®¾ç½®çš„æ³¨å†Œè¡¨é¡¹
+	// TODO: åº”é€‚å½“ä¿®æ”¹è¯¥å­—ç¬¦ä¸²ï¼Œ
+	// ä¾‹å¦‚ä¿®æ”¹ä¸ºå…¬å¸æˆ–ç»„ç»‡å
+	//SetRegistryKey(_T("åº”ç”¨ç¨‹åºå‘å¯¼ç”Ÿæˆçš„æœ¬åœ°åº”ç”¨ç¨‹åº"));
 
 	CLoginDlg dlg;
 	//m_pMainWnd = &dlg;
@@ -57,8 +48,8 @@ BOOL CV5App::InitInstance()
 	//if (nResponse == IDOK)
 	if(dlg.DoModal()==IDOK)
 	{
-		// TODO: ÔÚ´Ë·ÅÖÃ´¦ÀíºÎÊ±ÓÃ
-		//  ¡°È·¶¨¡±À´¹Ø±Õ¶Ô»°¿òµÄ´úÂë
+		// TODO: åœ¨æ­¤æ”¾ç½®å¤„ç†ä½•æ—¶ç”¨
+		//  â€œç¡®å®šâ€æ¥å…³é—­å¯¹è¯æ¡†çš„ä»£ç 
 		CV5Dlg  *pMainDlg=new CV5Dlg;
 		m_pMainWnd=pMainDlg;
 		pMainDlg->DoModal();
@@ -68,12 +59,12 @@ BOOL CV5App::InitInstance()
 	}
 	else
 	{
-		// TODO: ÔÚ´Ë·ÅÖÃ´¦ÀíºÎÊ±ÓÃ
-		//  ¡°È¡Ïû¡±À´¹Ø±Õ¶Ô»°¿òµÄ´úÂë
+		// TODO: åœ¨æ­¤æ”¾ç½®å¤„ç†ä½•æ—¶ç”¨
+		//  â€œå–æ¶ˆâ€æ¥å…³é—­å¯¹è¯æ¡†çš„ä»£ç 
 	}
 
-	// ÓÉÓÚ¶Ô»°¿òÒÑ¹Ø±Õ£¬ËùÒÔ½«·µ»Ø FALSE ÒÔ±ãÍË³öÓ¦ÓÃ³ÌĞò£¬
-	//  ¶ø²»ÊÇÆô¶¯Ó¦ÓÃ³ÌĞòµÄÏûÏ¢±Ã¡£
+	// ç”±äºå¯¹è¯æ¡†å·²å…³é—­ï¼Œæ‰€ä»¥å°†è¿”å› FALSE ä»¥ä¾¿é€€å‡ºåº”ç”¨ç¨‹åºï¼Œ
+	//  è€Œä¸æ˜¯å¯åŠ¨åº”ç”¨ç¨‹åºçš„æ¶ˆæ¯æ³µã€‚
 	return FALSE;
 }
 CString CV5App::GetComputerName()
@@ -97,7 +88,7 @@ BOOL CV5App::GetData(CString sql, _RecordsetPtr &Rs)
 	}
 	}catch(_com_error &er)
 	{
-		MessageBox(NULL,er.ErrorMessage(),_T("ÏµÍ³ÌáÊ¾"),MB_OK);
+		MessageBox(NULL,er.ErrorMessage(),_T("ç³»ç»Ÿæç¤º"),MB_OK);
 		return FALSE;
 	}
 }
@@ -125,36 +116,36 @@ BOOL CV5App::InitDB()
 
 CString CV5App::GetAppPath()
 {   /*
-	 * SetCurrentDirectory: ÇĞ»»µ±Ç°½ø³ÌµÄµ±Ç°¹¤×÷Ä¿Â¼¡£
-     * ÇëÎÊÔÚÊ²Ã´ÇéĞÎÏÂ»áÓĞÕâÖÖ½ø³ÌµÄÇĞ»»£¿£¿
-	 * ÇéĞÎ1 ½â¾öÊ¹ÓÃCFileDialogÔì³ÉµÄ·ÃÎÊÏà¶ÔÂ·¾¶ÎÄ¼ş³ö´í
-     * ÏÖÏó£º³ÌĞòÖĞÊ¹ÓÃCFileDialogÑ¡ÔñÒ»¸öÎÄ¼şºó£¬ÎŞ·¨·ÃÎÊÏà¶ÔÂ·¾¶ÏÂµÄÎÄ¼ş
-	 *       £¬DebugÃ»ÓĞ³ö´í£¬EXEÆô¶¯³ö´í£¡
-     * Ô­Òò£ºCFileDialogÍ¨¹ıDoModal() == IDOKºó£¬»áÔì³Éµ±Ç°³ÌĞòµÄÂ·¾¶µÄ¸Ä±ä
-	 *       £¬ËùÒÔÎŞ·¨·ÃÎÊ¡£
-     * ½â¾ö£ºÔÚµ÷ÓÃCFileDialog DoModalÇ°ÏÈÊ¹ÓÃGetCurrentDirectory()±£´æµ±Ç°Â·¾¶
-	 *       £¬µ÷ÓÃDoModal()ºóÊ¹ÓÃSetCurrentDirectory()ÖØĞÂÉè¶¨µ±Ç°Ä¿Â¼¼´¿É¡£
-	 * ÇéĞÎ2 ²Î¼û http://blog.csdn.net/woyaowenzi/article/details/4332187
-	 * ÇéĞÎ3 LoadLibrary¼ÓÔØ¶¯Ì¬¿âÊ§°ÜµÄ½â¾ö°ì·¨.
-     * ·½Ê½Ò» ²ÉÓÃLoadLibraryEx
-     * ÈôDLL²»ÔÚµ÷ÓÃ·½µÄÍ¬Ò»Ä¿Â¼ÏÂ£¬¿ÉÒÔÓÃLoadLibrary(L"DLL¾ø¶ÔÂ·¾¶")¼ÓÔØ
-	 * ¡£µ«Èôµ÷ÓÃµÄDLLÄÚ²¿ÓÖµ÷ÓÃÁíÍâÒ»¸öDLL£¬´ËÊ±µ÷ÓÃÈÔ»áÊ§°Ü¡£½â¾ö°ì·¨ÊÇÓÃLoadLibraryEx£º
-     * LoadLibraryEx("DLL¾ø¶ÔÂ·¾¶", NULL, LOAD_WITH_ALTERED_SEARCH_PATH);
-     * Í¨¹ıÖ¸¶¨LOAD_WITH_ALTERED_SEARCH_PATH£¬ÈÃÏµÍ³DLLËÑË÷Ë³Ğò´ÓDLLËùÔÚÄ¿Â¼¿ªÊ¼¡£
-     * ·½Ê½¶ş ²ÉÓÃSetCurrentDir
-     * ¿çÄ¿Â¼µ÷ÓÃdll£¬ÄãÓ¦¸ÃÕâÑù
-     * 1 ÓÃGetCurrentDir±£´æµ±Ç°µÄ¹¤×÷Ä¿Â¼
-     * 2 ÓÃSetCurrentDir½«µ±Ç°µÄ¹¤×÷Ä¿Â¼£¬ÉèÖÃÎªÄãµÄDLLËùÔÚµÄÂ·¾¶£¬ĞèÒªÊ¹ÓÃ¾ø¶ÔÂ·¾¶
-     * 3 ÓÃLoadLibraryÄãµÄDLL
-     * 4 Ê¹ÓÃSetCurrentDir»Ö¸´µ½Ô­À´µÄ¹¤×÷Â·¾¶
-	 */
-	TCHAR   szCurrentDir[255]={0};
-	GetModuleFileName(NULL, szCurrentDir, sizeof(szCurrentDir));
+     * SetCurrentDirectory: åˆ‡æ¢å½“å‰è¿›ç¨‹çš„å½“å‰å·¥ä½œç›®å½•ã€‚
+     * è¯·é—®åœ¨ä»€ä¹ˆæƒ…å½¢ä¸‹ä¼šæœ‰è¿™ç§è¿›ç¨‹çš„åˆ‡æ¢ï¼Ÿï¼Ÿ
+     * æƒ…å½¢1 è§£å†³ä½¿ç”¨CFileDialogé€ æˆçš„è®¿é—®ç›¸å¯¹è·¯å¾„æ–‡ä»¶å‡ºé”™
+     * ç°è±¡ï¼šç¨‹åºä¸­ä½¿ç”¨CFileDialogé€‰æ‹©ä¸€ä¸ªæ–‡ä»¶åï¼Œæ— æ³•è®¿é—®ç›¸å¯¹è·¯å¾„ä¸‹çš„æ–‡ä»¶
+     * ï¼ŒDebugæ²¡æœ‰å‡ºé”™ï¼ŒEXEå¯åŠ¨å‡ºé”™ï¼
+     * åŸå› ï¼šCFileDialogé€šè¿‡DoModal() == IDOKåï¼Œä¼šé€ æˆå½“å‰ç¨‹åºçš„è·¯å¾„çš„æ”¹å˜
+     * ï¼Œæ‰€ä»¥æ— æ³•è®¿é—®ã€‚
+     * è§£å†³ï¼šåœ¨è°ƒç”¨CFileDialog DoModalå‰å…ˆä½¿ç”¨GetCurrentDirectory()ä¿å­˜å½“å‰è·¯å¾„
+     * ï¼Œè°ƒç”¨DoModal()åä½¿ç”¨SetCurrentDirectory()é‡æ–°è®¾å®šå½“å‰ç›®å½•å³å¯ã€‚
+     * æƒ…å½¢2 å‚è§ http://blog.csdn.net/woyaowenzi/article/details/4332187
+     * æƒ…å½¢3 LoadLibraryåŠ è½½åŠ¨æ€åº“å¤±è´¥çš„è§£å†³åŠæ³•.
+     * æ–¹å¼ä¸€ é‡‡ç”¨LoadLibraryEx
+     * è‹¥DLLä¸åœ¨è°ƒç”¨æ–¹çš„åŒä¸€ç›®å½•ä¸‹ï¼Œå¯ä»¥ç”¨LoadLibrary(L"DLLç»å¯¹è·¯å¾„")åŠ è½½
+     * ã€‚ä½†è‹¥è°ƒç”¨çš„DLLå†…éƒ¨åˆè°ƒç”¨å¦å¤–ä¸€ä¸ªDLLï¼Œæ­¤æ—¶è°ƒç”¨ä»ä¼šå¤±è´¥ã€‚è§£å†³åŠæ³•æ˜¯ç”¨LoadLibraryExï¼š
+     * LoadLibraryEx("DLLç»å¯¹è·¯å¾„", NULL, LOAD_WITH_ALTERED_SEARCH_PATH);
+     * é€šè¿‡æŒ‡å®šLOAD_WITH_ALTERED_SEARCH_PATHï¼Œè®©ç³»ç»ŸDLLæœç´¢é¡ºåºä»DLLæ‰€åœ¨ç›®å½•å¼€å§‹ã€‚
+     * æ–¹å¼äºŒ é‡‡ç”¨SetCurrentDir
+     * è·¨ç›®å½•è°ƒç”¨dllï¼Œä½ åº”è¯¥è¿™æ ·
+     * 1 ç”¨GetCurrentDirä¿å­˜å½“å‰çš„å·¥ä½œç›®å½•
+     * 2 ç”¨SetCurrentDirå°†å½“å‰çš„å·¥ä½œç›®å½•ï¼Œè®¾ç½®ä¸ºä½ çš„DLLæ‰€åœ¨çš„è·¯å¾„ï¼Œéœ€è¦ä½¿ç”¨ç»å¯¹è·¯å¾„
+     * 3 ç”¨LoadLibraryä½ çš„DLL
+     * 4 ä½¿ç”¨SetCurrentDiræ¢å¤åˆ°åŸæ¥çš„å·¥ä½œè·¯å¾„
+     */
+    TCHAR   szCurrentDir[255]={0};
+    GetModuleFileName(NULL, szCurrentDir, sizeof(szCurrentDir));
     LPTSTR lpInsertPos = _tcsrchr( szCurrentDir, _T('\\') );
     _tcscpy(lpInsertPos+1,_T("\\..\\"));
     SetCurrentDirectory(szCurrentDir);
     GetCurrentDirectory( sizeof(szCurrentDir),szCurrentDir);  
-	return szCurrentDir;
+    return szCurrentDir;
 }
 
 CString CV5App::GetConnectionString()
@@ -165,7 +156,7 @@ CString CV5App::GetConnectionString()
 	CString   strPWD=_T("");
 	CString   strConnectionString=_T("");
 	CString   strFilePath=GetAppPath()+_T("\\setting.ini");
-    GetPrivateProfileString(_T("db"),_T("server"),_T(""),strServer.GetBuffer(255),255,strFilePath.GetBuffer(255));
+	GetPrivateProfileString(_T("db"),_T("server"),_T(""),strServer.GetBuffer(255),255,strFilePath.GetBuffer(255));
 	GetPrivateProfileString(_T("db"),_T("database"),_T(""),strDB.GetBuffer(255),255,strFilePath.GetBuffer(255));
 	GetPrivateProfileString(_T("db"),_T("uid"),_T(""),strUID.GetBuffer(255),255,strFilePath.GetBuffer(255));
 	GetPrivateProfileString(_T("db"),_T("pwd"),_T(""),strPWD.GetBuffer(255),255,strFilePath.GetBuffer(255));
