@@ -1,44 +1,27 @@
-// V5.h : PROJECT_NAME Ó¦ÓÃ³ÌĞòµÄÖ÷Í·ÎÄ¼ş
-//
-
 #pragma once
-
 #ifndef __AFXWIN_H__
-	#error "ÔÚ°üº¬´ËÎÄ¼şÖ®Ç°°üº¬¡°stdafx.h¡±ÒÔÉú³É PCH ÎÄ¼ş"
+	#error "åœ¨åŒ…å«æ­¤æ–‡ä»¶ä¹‹å‰åŒ…å«â€œstdafx.hâ€ä»¥ç”Ÿæˆ PCH æ–‡ä»¶"
 #endif
-
-#include "resource.h"		// Ö÷·ûºÅ
-
-
-// CV5App:
-// ÓĞ¹Ø´ËÀàµÄÊµÏÖ£¬Çë²ÎÔÄ V5.cpp
-//
+#include "resource.h"		// ä¸»ç¬¦å·
 
 class CV5App : public CWinApp
 {
 public:
 	CV5App();
-
-// ÖØĞ´
 	public:
 	CString GetConnectionString();
 	CString GetAppPath();
 	BOOL InitDB();
 	_RecordsetPtr m_ConfigureRecordset;
 	_CommandPtr   m_pCommand;
-	
 	CString GetComputerIP();
 	CString GetComputerName();
-
-    _ConnectionPtr    m_pConnection;
+        _ConnectionPtr    m_pConnection;
 	CString           m_OperatorID;
 	CString           m_OperatorName;
 	CString           m_ShiftID;
 	BOOL  GetData(CString sql, _RecordsetPtr &Rs);
 	virtual BOOL InitInstance();
-
-// ÊµÏÖ
-
 	DECLARE_MESSAGE_MAP()
 };
 
