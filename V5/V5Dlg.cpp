@@ -38,19 +38,16 @@ END_MESSAGE_MAP()
 
 BOOL CV5Dlg::OnInitDialog()
 {
-	 CDialog::OnInitDialog();
-	 ShowWindow(SW_SHOWMAXIMIZED);
-	 //::SetWindowPos(this->m_hWnd,HWND_BOTTOM,0,0,1360,768,SWP_SHOWWINDOW);
-	 
-	 m_MainMenu.LoadMenu(IDR_MENU1);
-	 this->SetMenu(&m_MainMenu);
-    //m_wndToolBar.Create
+	CDialog::OnInitDialog();
+	ShowWindow(SW_SHOWMAXIMIZED);
+	m_MainMenu.LoadMenu(IDR_MENU1);
+	this->SetMenu(&m_MainMenu);
 	m_imgList.Create(32,32,ILC_COLOR32|ILC_MASK,0,0);
 	m_imgList.Add(::AfxGetApp()->LoadIcon(IDI_FIT_CHECKIN));
 	m_imgList.Add(::AfxGetApp()->LoadIconW(IDI_QUERY));
 	m_imgList.Add(::AfxGetApp()->LoadIconW(IDI_RESERVE));
 	m_imgList.Add(::AfxGetApp()->LoadIcon(IDI_RESERVE));
-    m_imgList.Add(::AfxGetApp()->LoadIcon(IDI_RESERVE_TO_CHECKIN));
+        m_imgList.Add(::AfxGetApp()->LoadIcon(IDI_RESERVE_TO_CHECKIN));
 	m_imgList.Add(::AfxGetApp()->LoadIcon(IDI_MEMBER));
 	m_imgList.Add(::AfxGetApp()->LoadIcon(IDI_CLEAN));
 	m_imgList.Add(::AfxGetApp()->LoadIcon(IDI_SETTLE));
@@ -59,81 +56,63 @@ BOOL CV5Dlg::OnInitDialog()
 	m_imgList.Add(::AfxGetApp()->LoadIcon(IDI_CLOSE_SHIFT));
 	m_imgList.Add(::AfxGetApp()->LoadIcon(IDI_SETTING));
 	m_imgList.Add(::AfxGetApp()->LoadIcon(IDI_REFRESH));
-
-    m_wndToolBar.Create(this,WS_CHILD| WS_CHILD | WS_VISIBLE |CBRS_ALIGN_TOP | CBRS_GRIPPER | CBRS_TOOLTIPS|TBSTYLE_FLAT/*|CBRS_BORDER_TOP|*/ );
-    RECT   trc;
-  
-	
-	//m_wndToolBar.CalcWindowRect(&trc);
-//m_wndToolBar.SetBarStyle(m_wndToolBar.GetBarStyle()|CCS_TOP );
-    
+        m_wndToolBar.Create(this,WS_CHILD| WS_CHILD | WS_VISIBLE |CBRS_ALIGN_TOP | CBRS_GRIPPER | CBRS_TOOLTIPS|TBSTYLE_FLAT/*|CBRS_BORDER_TOP|*/ );
+        RECT   trc;
 	UINT arr[14];
 	for (int i=0;i<14;i++)
 	{
 		   if(i==3|| i==5)
-                     arr[i]= ID_SEPARATOR; //µÚ3¡¢6¸ö°´Å¥Îª·Ö¸ôÌõ
+                     arr[i]= ID_SEPARATOR; //ç¬¬3ã€6ä¸ªæŒ‰é’®ä¸ºåˆ†éš”æ¡
               else
                      arr[i]= i+1001;
 	}
 
-	// ÉèÖÃ´Ë¶Ô»°¿òµÄÍ¼±ê¡£µ±Ó¦ÓÃ³ÌĞòÖ÷´°¿Ú²»ÊÇ¶Ô»°¿òÊ±£¬¿ò¼Ü½«×Ô¶¯
-	//  Ö´ĞĞ´Ë²Ù×÷
+	// è®¾ç½®æ­¤å¯¹è¯æ¡†çš„å›¾æ ‡ã€‚å½“åº”ç”¨ç¨‹åºä¸»çª—å£ä¸æ˜¯å¯¹è¯æ¡†æ—¶ï¼Œæ¡†æ¶å°†è‡ªåŠ¨
+	//  æ‰§è¡Œæ­¤æ“ä½œ
 
 	m_wndToolBar.SetButtons(arr,14);
 	m_wndToolBar.GetToolBarCtrl().SetImageList(&m_imgList);
-	m_wndToolBar.SetSizes(CSize(32,32),CSize(32,32));//ÉèÖÃ°´Å¥ºÍÍ¼±êµÄ´óĞ¡
+	m_wndToolBar.SetSizes(CSize(32,32),CSize(32,32));//è®¾ç½®æŒ‰é’®å’Œå›¾æ ‡çš„å¤§å°
 	//m_wndToolBar.S
 	RepositionBars(AFX_IDW_CONTROLBAR_FIRST,AFX_IDW_CONTROLBAR_LAST,0);
 	m_wndToolBar.SetButtonStyle(7,m_wndToolBar.GetButtonStyle(7) | BS_FLAT);
-	SetIcon(m_hIcon, TRUE);			// ÉèÖÃ´óÍ¼±ê
-	SetIcon(m_hIcon, FALSE);		// ÉèÖÃĞ¡Í¼±ê
-	// TODO: ÔÚ´ËÌí¼Ó¶îÍâµÄ³õÊ¼»¯´úÂë
+	SetIcon(m_hIcon, TRUE);			// è®¾ç½®å¤§å›¾æ ‡
+	SetIcon(m_hIcon, FALSE);		// è®¾ç½®å°å›¾æ ‡
+        m_wndToolBar.GetWindowRect(&trc);
+	this->ScreenToClient(&trc);
 
-	//CWnd *pWnd= m_wndToolBar.GetCo
-     m_wndToolBar.GetWindowRect(&trc);
-	 this->ScreenToClient(&trc);
-
-    CWnd  *viewWnd=this->GetDlgItem(IDC_STATIC_VIEW);
+        CWnd  *viewWnd=this->GetDlgItem(IDC_STATIC_VIEW);
 	CRect  rc;
 	RECT MainWindowRect;
 	::GetClientRect(m_hWnd,&MainWindowRect);
-	//this->GetWindRect(&MainWindowRect);
-	//this->GetWindRect(&MainWindowRect);
-   this->ScreenToClient(&MainWindowRect);
+        this->ScreenToClient(&MainWindowRect);
 	viewWnd->MoveWindow(0,trc.bottom -trc.top ,MainWindowRect.right -MainWindowRect.left ,MainWindowRect.bottom-MainWindowRect.top-(trc.bottom -trc.top) );
 	viewWnd->GetWindowRect(rc);
 	this->ScreenToClient(rc);
-	 m_pRoomView = (CRoomView*)RUNTIME_CLASS(CRoomView)->CreateObject();  
-    //ÔÚÄ¿±êÎ»ÖÃ¶¯Ì¬´´½¨ÊÓÍ¼  
-    if (NULL==m_pRoomView)    
-    {    
+	m_pRoomView = (CRoomView*)RUNTIME_CLASS(CRoomView)->CreateObject();  
+    //åœ¨ç›®æ ‡ä½ç½®åŠ¨æ€åˆ›å»ºè§†å›¾  
+       if (NULL==m_pRoomView)    
+       {    
         return FALSE;    
-     }    
-     m_pRoomView->Create(NULL, NULL, AFX_WS_DEFAULT_VIEW, rc, this, IDC_STATIC_VIEW);    
-
-
-	return TRUE;  // ³ı·Ç½«½¹µãÉèÖÃµ½¿Ø¼ş£¬·ñÔò·µ»Ø TRUE
+       }    
+       m_pRoomView->Create(NULL, NULL, AFX_WS_DEFAULT_VIEW, rc, this, IDC_STATIC_VIEW);    
+	return TRUE;  // é™¤éå°†ç„¦ç‚¹è®¾ç½®åˆ°æ§ä»¶ï¼Œå¦åˆ™è¿”å› TRUE
 }
 
-// Èç¹ûÏò¶Ô»°¿òÌí¼Ó×îĞ¡»¯°´Å¥£¬ÔòĞèÒªÏÂÃæµÄ´úÂë
-//  À´»æÖÆ¸ÃÍ¼±ê¡£¶ÔÓÚÊ¹ÓÃÎÄµµ/ÊÓÍ¼Ä£ĞÍµÄ MFC Ó¦ÓÃ³ÌĞò£¬
-//  Õâ½«ÓÉ¿ò¼Ü×Ô¶¯Íê³É¡£
 void CV5Dlg::OnPaint()
 {
 	if (IsIconic())
 	{
-		CPaintDC dc(this); // ÓÃÓÚ»æÖÆµÄÉè±¸ÉÏÏÂÎÄ
-
+		CPaintDC dc(this); // ç”¨äºç»˜åˆ¶çš„è®¾å¤‡ä¸Šä¸‹æ–‡
 		SendMessage(WM_ICONERASEBKGND, reinterpret_cast<WPARAM>(dc.GetSafeHdc()), 0);
-
-		// Ê¹Í¼±êÔÚ¹¤×÷Çø¾ØĞÎÖĞ¾ÓÖĞ
+		// ä½¿å›¾æ ‡åœ¨å·¥ä½œåŒºçŸ©å½¢ä¸­å±…ä¸­
 		int cxIcon = GetSystemMetrics(SM_CXICON);
 		int cyIcon = GetSystemMetrics(SM_CYICON);
 		CRect rect;
 		GetClientRect(&rect);
 		int x = (rect.Width() - cxIcon + 1) / 2;
 		int y = (rect.Height() - cyIcon + 1) / 2;
-		// »æÖÆÍ¼±ê
+		// ç»˜åˆ¶å›¾æ ‡
 		dc.DrawIcon(x, y, m_hIcon);
 	}
 	else
@@ -142,14 +121,12 @@ void CV5Dlg::OnPaint()
 	}
 }
 
-//µ±ÓÃ»§ÍÏ¶¯×îĞ¡»¯´°¿ÚÊ±ÏµÍ³µ÷ÓÃ´Ëº¯ÊıÈ¡µÃ¹â±ê
-//ÏÔÊ¾¡£
+//å½“ç”¨æˆ·æ‹–åŠ¨æœ€å°åŒ–çª—å£æ—¶ç³»ç»Ÿè°ƒç”¨æ­¤å‡½æ•°å–å¾—å…‰æ ‡
+//æ˜¾ç¤ºã€‚
 HCURSOR CV5Dlg::OnQueryDragIcon()
 {
 	return static_cast<HCURSOR>(m_hIcon);
 }
-
-
 
 
 int CV5Dlg::OnCreate(LPCREATESTRUCT lpCreateStruct)
@@ -157,45 +134,20 @@ int CV5Dlg::OnCreate(LPCREATESTRUCT lpCreateStruct)
 	   ModifyStyle(0,WS_MAXIMIZE);
 	if (CDialog::OnCreate(lpCreateStruct) == -1)
 		return -1;
-
-	// TODO:  ÔÚ´ËÌí¼ÓÄú×¨ÓÃµÄ´´½¨´úÂë
-
 	return 0;
 }
 
-//void CV5Dlg::OnNcLButtonDown(UINT nHitTest, CPoint point)
-//{
-//	// TODO: ÔÚ´ËÌí¼ÓÏûÏ¢´¦Àí³ÌĞò´úÂëºÍ/»òµ÷ÓÃÄ¬ÈÏÖµ
-//    if (IsZoomed()) return;
-//	CDialog::OnNcLButtonDown(nHitTest, point);
-//}
-
-//void CV5Dlg::OnNcLButtonDblClk(UINT nHitTest, CPoint point)
-//{
-//	// TODO: ÔÚ´ËÌí¼ÓÏûÏ¢´¦Àí³ÌĞò´úÂëºÍ/»òµ÷ÓÃÄ¬ÈÏÖµ
-//    if (IsZoomed()) return;
-//	CDialog::OnNcLButtonDblClk(nHitTest, point);
-//}
-
-//void CV5Dlg::OnNcXButtonDblClk(UINT nFlags, UINT nButton, CPoint point)
-//{
-//	// ¸Ã¹¦ÄÜÒªÇóÊ¹ÓÃ Windows 2000 »ò¸ü¸ß°æ±¾¡£
-//	// ·ûºÅ _WIN32_WINNT ºÍ WINVER ±ØĞë >= 0x0500¡£
-//	// TODO: ÔÚ´ËÌí¼ÓÏûÏ¢´¦Àí³ÌĞò´úÂëºÍ/»òµ÷ÓÃÄ¬ÈÏÖµ
-// if (IsZoomed()) return;
-//	CDialog::OnNcXButtonDblClk(nFlags, nButton, point);
-//}
 
 void CV5Dlg::OnGetMinMaxInfo(MINMAXINFO* lpMMI)
 {
-	// TODO: ÔÚ´ËÌí¼ÓÏûÏ¢´¦Àí³ÌĞò´úÂëºÍ/»òµ÷ÓÃÄ¬ÈÏÖµ
+	// TODO: åœ¨æ­¤æ·»åŠ æ¶ˆæ¯å¤„ç†ç¨‹åºä»£ç å’Œ/æˆ–è°ƒç”¨é»˜è®¤å€¼
 lpMMI-> ptMaxSize.y   =   GetSystemMetrics(SM_CYFULLSCREEN)+GetSystemMetrics(SM_CYCAPTION)-GetSystemMetrics(SM_CYDLGFRAME-50);
 	CDialog::OnGetMinMaxInfo(lpMMI);
 }
 
 void CV5Dlg::OnNcLButtonDblClk(UINT nHitTest, CPoint point)
 {
-	// TODO: ÔÚ´ËÌí¼ÓÏûÏ¢´¦Àí³ÌĞò´úÂëºÍ/»òµ÷ÓÃÄ¬ÈÏÖµ
+	// TODO: åœ¨æ­¤æ·»åŠ æ¶ˆæ¯å¤„ç†ç¨‹åºä»£ç å’Œ/æˆ–è°ƒç”¨é»˜è®¤å€¼
  if(nHitTest==HTCAPTION )    
         return;    
 	CDialog::OnNcLButtonDblClk(nHitTest, point);
@@ -203,7 +155,7 @@ void CV5Dlg::OnNcLButtonDblClk(UINT nHitTest, CPoint point)
 
 void CV5Dlg::OnNcLButtonDown(UINT nHitTest, CPoint point)
 {
-	// TODO: ÔÚ´ËÌí¼ÓÏûÏ¢´¦Àí³ÌĞò´úÂëºÍ/»òµ÷ÓÃÄ¬ÈÏÖµ
+	// TODO: åœ¨æ­¤æ·»åŠ æ¶ˆæ¯å¤„ç†ç¨‹åºä»£ç å’Œ/æˆ–è°ƒç”¨é»˜è®¤å€¼
 if(nHitTest==HTCAPTION )    
         return;
 	CDialog::OnNcLButtonDown(nHitTest, point);
