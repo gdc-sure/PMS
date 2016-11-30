@@ -71,18 +71,18 @@ END
 // Icon with lowest ID value placed first to ensure application icon
 // remains consistent on all systems.
 IDR_MAINFRAME           ICON                    "res\\V5.ico"
-IDI_SETTLE              ICON                    "E:\\编程电子书\\HotelManager.exe-EXT\\settle.ico"
-IDI_SETTING             ICON                    "E:\\编程电子书\\HotelManager.exe-EXT\\setting.ico"
-IDI_RESERVE_TO_CHECKIN  ICON                    "E:\\编程电子书\\HotelManager.exe-EXT\\reserve-to-checkin.ico"
-IDI_REPORT              ICON                    "E:\\编程电子书\\HotelManager.exe-EXT\\report.ico"
-IDI_REFRESH             ICON                    "E:\\编程电子书\\HotelManager.exe-EXT\\refresh.ico"
-IDI_MEMBER              ICON                    "E:\\编程电子书\\HotelManager.exe-EXT\\new-member.ico"
-IDI_RESERVE             ICON                    "E:\\编程电子书\\HotelManager.exe-EXT\\fit-reserved.ico"
-IDI_QUERY               ICON                    "E:\\编程电子书\\HotelManager.exe-EXT\\fit-query.ico"
-IDI_FIT_CHECKIN         ICON                    "E:\\编程电子书\\HotelManager.exe-EXT\\fit-check-in.ico"
-IDI_CLOSE_SHIFT         ICON                    "E:\\编程电子书\\HotelManager.exe-EXT\\close-shift.ico"
-IDI_CLEAN               ICON                    "E:\\编程电子书\\HotelManager.exe-EXT\\clean.ico"
-IDI_AUDIT               ICON                    "E:\\编程电子书\\HotelManager.exe-EXT\\audit.ico"
+IDI_SETTLE              ICON                    "res\\settle.ico"
+IDI_SETTING             ICON                    "res\\setting.ico"
+IDI_RESERVE_TO_CHECKIN  ICON                    "res\\reserve-to-checkin.ico"
+IDI_REPORT              ICON                    "res\\report.ico"
+IDI_REFRESH             ICON                    "res\\refresh.ico"
+IDI_MEMBER              ICON                    "res\\new-member.ico"
+IDI_RESERVE             ICON                    "res\\fit-reserved.ico"
+IDI_QUERY               ICON                    "res\\fit-query.ico"
+IDI_FIT_CHECKIN         ICON                    "res\\fit-check-in.ico"
+IDI_CLOSE_SHIFT         ICON                    "res\\close-shift.ico"
+IDI_CLEAN               ICON                    "res\\clean.ico"
+IDI_AUDIT               ICON                    "res\\audit.ico"
 
 /////////////////////////////////////////////////////////////////////////////
 //
