@@ -1,5 +1,6 @@
 // V5Dlg.h : 头文件
 //
+#include "Panel.h"
 #include "RoomView.h"
 #pragma once
 
@@ -16,7 +17,8 @@ public:
     CToolBar   m_wndToolBar;
 	CMenu      m_MainMenu;
 	CImageList   m_imgList;
-
+    
+	CPanel     m_Panel;
    
 	protected:
 	virtual void DoDataExchange(CDataExchange* pDX);	// DDX/DDV 支持

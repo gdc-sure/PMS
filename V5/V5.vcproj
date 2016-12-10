@@ -190,6 +190,14 @@
 				>
 			</File>
 			<File
+				RelativePath=".\Panel.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\RMButton.cpp"
+				>
+			</File>
+			<File
 				RelativePath=".\RoomView.cpp"
 				>
 			</File>
@@ -232,7 +240,15 @@
 				>
 			</File>
 			<File
+				RelativePath=".\Panel.h"
+				>
+			</File>
+			<File
 				RelativePath=".\Resource.h"
+				>
+			</File>
+			<File
+				RelativePath=".\RMButton.h"
 				>
 			</File>
 			<File
@@ -266,7 +282,19 @@
 				>
 			</File>
 			<File
+				RelativePath=".\res\audit.ico"
+				>
+			</File>
+			<File
 				RelativePath="E:\编程电子书\HotelManager.exe-EXT\clean.ico"
+				>
+			</File>
+			<File
+				RelativePath=".\res\clean.ico"
+				>
+			</File>
+			<File
+				RelativePath=".\res\close-shift.ico"
 				>
 			</File>
 			<File
@@ -278,7 +306,15 @@
 				>
 			</File>
 			<File
+				RelativePath=".\res\fit-check-in.ico"
+				>
+			</File>
+			<File
 				RelativePath="E:\编程电子书\HotelManager.exe-EXT\fit-query.ico"
+				>
+			</File>
+			<File
+				RelativePath=".\res\fit-query.ico"
 				>
 			</File>
 			<File
@@ -286,7 +322,15 @@
 				>
 			</File>
 			<File
+				RelativePath=".\res\fit-reserved.ico"
+				>
+			</File>
+			<File
 				RelativePath="e:\编程电子书\hotelmanager.exe-ext\icon1.ico"
+				>
+			</File>
+			<File
+				RelativePath=".\res\new-member.ico"
 				>
 			</File>
 			<File
@@ -294,7 +338,15 @@
 				>
 			</File>
 			<File
+				RelativePath=".\res\refresh.ico"
+				>
+			</File>
+			<File
 				RelativePath="E:\编程电子书\HotelManager.exe-EXT\refresh.ico"
+				>
+			</File>
+			<File
+				RelativePath=".\res\report.ico"
 				>
 			</File>
 			<File
@@ -306,11 +358,23 @@
 				>
 			</File>
 			<File
+				RelativePath=".\res\reserve-to-checkin.ico"
+				>
+			</File>
+			<File
 				RelativePath="E:\编程电子书\HotelManager.exe-EXT\setting.ico"
 				>
 			</File>
 			<File
+				RelativePath=".\res\setting.ico"
+				>
+			</File>
+			<File
 				RelativePath="E:\编程电子书\HotelManager.exe-EXT\settle.ico"
+				>
+			</File>
+			<File
+				RelativePath=".\res\settle.ico"
 				>
 			</File>
 			<File

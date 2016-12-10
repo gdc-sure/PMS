@@ -18,10 +18,12 @@
 #define IDI_CLEAN                       140
 #define IDI_AUDIT                       146
 #define IDR_MENU1                       147
+#define IDD_PANEL                       148
 #define IDC_BUTTON_LOGIN                1001
 #define IDC_BUTTON_LOGIN2               1002
 #define IDC_BUTTON_CLOSE                1002
 #define IDC_STATIC_VIEW                 1002
+#define IDC_BUTTON1                     1003
 #define ID_32771                        32771
 #define ID_32772                        32772
 #define ID_32773                        32773
@@ -51,9 +53,9 @@
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
-#define _APS_NEXT_RESOURCE_VALUE        148
+#define _APS_NEXT_RESOURCE_VALUE        149
 #define _APS_NEXT_COMMAND_VALUE         32795
-#define _APS_NEXT_CONTROL_VALUE         1003
+#define _APS_NEXT_CONTROL_VALUE         1004
 #define _APS_NEXT_SYMED_VALUE           101
 #endif
 #endif

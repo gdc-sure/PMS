@@ -4,6 +4,7 @@
 #include "V5Dlg.h"
 #include "RoomView.h"
 
+#include "RMButton.h"
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #endif
@@ -39,7 +40,11 @@ END_MESSAGE_MAP()
 BOOL CV5Dlg::OnInitDialog()
 {
 	CDialog::OnInitDialog();
+	
 	ShowWindow(SW_SHOWMAXIMIZED);
+
+	m_Panel.Create(IDD_PANEL,this);
+	
 	m_MainMenu.LoadMenu(IDR_MENU1);
 	this->SetMenu(&m_MainMenu);
 	m_imgList.Create(32,32,ILC_COLOR32|ILC_MASK,0,0);
@@ -86,7 +91,10 @@ BOOL CV5Dlg::OnInitDialog()
 	RECT MainWindowRect;
 	::GetClientRect(m_hWnd,&MainWindowRect);
         this->ScreenToClient(&MainWindowRect);
-	viewWnd->MoveWindow(0,trc.bottom -trc.top ,MainWindowRect.right -MainWindowRect.left ,MainWindowRect.bottom-MainWindowRect.top-(trc.bottom -trc.top) );
+		
+	m_Panel.MoveWindow(0,83,200,MainWindowRect.bottom-MainWindowRect.top-(trc.bottom -trc.top) );
+	m_Panel.ShowWindow(SW_SHOW);
+	viewWnd->MoveWindow(200,trc.bottom -trc.top ,MainWindowRect.right -MainWindowRect.left ,MainWindowRect.bottom-MainWindowRect.top-(trc.bottom -trc.top) );
 	viewWnd->GetWindowRect(rc);
 	this->ScreenToClient(rc);
 	m_pRoomView = (CRoomView*)RUNTIME_CLASS(CRoomView)->CreateObject();  
@@ -96,7 +104,15 @@ BOOL CV5Dlg::OnInitDialog()
         return FALSE;    
        }    
        m_pRoomView->Create(NULL, NULL, AFX_WS_DEFAULT_VIEW, rc, this, IDC_STATIC_VIEW);    
-	return TRUE;  // 除非将焦点设置到控件，否则返回 TRUE
+	   CRMButton  *btn=new CRMButton;
+	btn->Create(TEXT("OK"),BS_PUSHBUTTON | WS_VISIBLE ,CRect(2,2,115,65),m_pRoomView,102);
+	btn=new CRMButton;
+    btn->Create(TEXT("OK"),BS_PUSHBUTTON | WS_VISIBLE ,CRect(119,2,232,65),m_pRoomView,1250);
+	//btn->ShowWindow(SW_SHOW);
+	   
+	   
+	   
+	   return TRUE;  // 除非将焦点设置到控件，否则返回 TRUE
 }
 
 void CV5Dlg::OnPaint()
